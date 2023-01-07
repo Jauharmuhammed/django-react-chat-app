@@ -10,7 +10,7 @@ const DefaultProps = {
   login: () => null,
   logout: () => null,
   authAxios: axios,
-  user: null
+  user: null,
 };
 
 export interface AuthProps {
@@ -22,7 +22,9 @@ export interface AuthProps {
 
 export const AuthContext = createContext<AuthProps>(DefaultProps);
 
-export const AuthContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const AuthContextProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(() => AuthService.getCurrentUser());
 

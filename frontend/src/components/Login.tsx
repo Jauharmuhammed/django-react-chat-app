@@ -11,7 +11,7 @@ export function Login() {
   const formik = useFormik({
     initialValues: {
       username: "",
-      password: ""
+      password: "",
     },
     onSubmit: async (values, { setSubmitting }) => {
       setSubmitting(true);
@@ -25,7 +25,7 @@ export function Login() {
         navigate("/");
       }
       setSubmitting(false);
-    }
+    },
   });
 
   useEffect(() => {
@@ -38,7 +38,9 @@ export function Login() {
     <div>
       <div className="w-full max-w-md space-y-8">
         <div>
-          <h1 className="mt-6 text-3xl font-extrabold text-gray-900">Sign in to your account</h1>
+          <h1 className="mt-6 text-3xl font-extrabold text-gray-900">
+            Sign in to your account
+          </h1>
         </div>
 
         <form className="mt-8 space-y-6" onSubmit={formik.handleSubmit}>

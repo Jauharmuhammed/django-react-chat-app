@@ -1,6 +1,7 @@
 import axios from "axios";
 import { UserModel } from "../models/User";
 
+
 class AuthService {
   setUserInLocalStorage(data: UserModel) {
     localStorage.setItem("user", JSON.stringify(data));
